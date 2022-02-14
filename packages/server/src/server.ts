@@ -29,7 +29,7 @@ app.post('/*', async (req, res) => {
 
   uploadToS3(req, res, (err) => {
     if (err) {
-      return res.status(422).send(Error);
+      return res.status(418).send(Error);
     }
 
     if (req.file) {
@@ -56,7 +56,7 @@ app.post('/*', async (req, res) => {
             });
           })
           .catch(() => {
-            res.status(402).send('error');
+            res.status(418).send('error');
           });
       } else {
         uploadAnyFiles(params, newName)
@@ -66,7 +66,7 @@ app.post('/*', async (req, res) => {
             });
           })
           .catch(() => {
-            res.status(402).send('error');
+            res.status(418).send('error');
           });
       }
     }
