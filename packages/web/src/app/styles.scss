@@ -27,7 +27,8 @@ html {
 
   &__label {
     margin-right: 300px;
-    width: 60px;
+    width: 80px;
+    height: 80px;
     border: 2px dashed grey;
     border-radius: 5px;
     display: block;
@@ -40,10 +41,14 @@ html {
       border: 2px solid lightgreen;
     }
 
-    i {
-      display: block;
+    .material-icons {
       font-size:30px;
-      //padding-bottom:8px;
+      height: 80px;
+    }
+
+    span {
+      display: block;
+      font-size:18px;
     }
 
     input[type=file] {
@@ -56,6 +61,8 @@ html {
 }
 
 .downloads {
+  margin-top: 20px;
+
   &__list {
     display: flex;
     flex-direction: column;
