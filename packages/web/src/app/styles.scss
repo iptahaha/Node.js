@@ -61,9 +61,9 @@ html {
 }
 
 .downloads {
-  margin-top: 20px;
 
   &__list {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

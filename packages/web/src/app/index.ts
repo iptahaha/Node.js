@@ -2,13 +2,13 @@ import './styles.scss';
 import { getNodeById } from './utils';
 
 const form: HTMLElement = getNodeById('form');
-const input: HTMLElement = getNodeById('input');
+const input: HTMLInputElement = getNodeById('input');
 const toDownload: HTMLElement = getNodeById('toDownload');
 const browseText: HTMLElement = getNodeById('browseText');
 
 input.addEventListener('input', () => {
   browseText.innerText = 'Now Submit!';
-})
+});
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -21,7 +21,7 @@ form.addEventListener('submit', async (event) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      if(data.links.length === 1) {
+      if (data.links.length === 1) {
         const fileLink = document.createElement('a');
         fileLink.href = [...data.links];
         fileLink.innerText = `You can download your file here.`;
@@ -35,7 +35,7 @@ form.addEventListener('submit', async (event) => {
 
         [aLarge.href, aMedium.href, aSmall.href] = [...data.links];
         const div = document.createElement('div');
-        div.innerText = 'You can download your images in:'
+        div.innerText = 'You can download your images in:';
         aLarge.innerText = `[Large format - 2048 x 2048]`;
         aMedium.innerText = `[Medium format - 1024 x 1024]`;
         aSmall.innerText = `[Thumb - 300x300]`;
@@ -43,8 +43,7 @@ form.addEventListener('submit', async (event) => {
           .appendChild(aLarge)
           .appendChild(aMedium)
           .appendChild(aSmall)
-          .appendChild(image)
-          .scrollIntoView({block: "center", behavior: "smooth"});
+        toDownload.appendChild(image).scrollIntoView({ block: 'center', behavior: 'smooth' });
         browseText.innerText = 'Browse files';
       }
     })
