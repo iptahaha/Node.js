@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.static('./../web/dist'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const storage = multer.memoryStorage();
 const upload = multer({
   storage,
@@ -73,6 +73,6 @@ app.post('/*', async (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
