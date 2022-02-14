@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "cd ./packages/server && yarn start",
-    "build": "yarn build:web && yarn build:server",
-    "build:web": "cd ./packages/web && yarn build:prod",
-    "build:server": "cd ./packages/server && yarn build",
-    "clear": "yarn clear:server && yarn clear:web",
-    "clear:web": "cd ./packages/web && yarn clear",
-    "clear:server": "cd ./packages/server && yarn clear"
+    "build": "yarn build:web && yarn build:server"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "5.10.2",
