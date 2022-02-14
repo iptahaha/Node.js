@@ -4,7 +4,7 @@
   "scripts": {
     "start": "cd ./packages/server && yarn start",
     "build": "yarn build:web && yarn build:server",
-    "build:web": "cd ./packages/web && yarn build:prod",
+    "build:web": "cd ./packages/web && yarn build",
     "build:server": "cd ./packages/server && yarn build"
   },
   "dependencies": {
@@ -28,6 +28,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "browserslist": [
     "last 1 Chrome version"
